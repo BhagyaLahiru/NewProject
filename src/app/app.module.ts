@@ -14,6 +14,7 @@ import { ViewComponent } from './user/view/view.component';
 import { LoginComponent } from './login/login.component';
 import { GemComponent } from './gem/gem.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { RegisterComponent } from './register/register.component';
     ViewComponent,
     LoginComponent,
     GemComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

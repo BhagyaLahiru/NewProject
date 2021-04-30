@@ -1,400 +1,44 @@
-<div class="profile container">
-   <div class="lahiru">
+<content>
+
+
+
    
-<div class="ae" >
-        <div  class="card" style="width: 18rem; margin: 20px;">
-          <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-        <div class="card-body">
-            <h5 class="card-title">Unheated natural blue sapphire</h5>
-            <div class="description">
-                Unheated nutural blue sapphire from Sri Lanka
+
+    <div class="profile-info" style="background-image: url('/assets/image/profile-background-image.jpg');">
+        <div class="profile-backgroud">
+            <h1 class="title" style="color: black;font-weight: bold;font-family: monospace;">User Profile</h1>
+            <div class="profile-pic">
+                <img src="\assets\image\profile.png">
             </div>
-            <p class="card-text">$900.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
-        </div>
-        </div>
-                <div  class="card" style="width: 18rem; margin: 20px;">
-          <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-        <div class="card-body">
-            <h5 class="card-title">Unheated natural blue sapphire</h5>
-            <div class="description">
-                Unheated nutural blue sapphire from Sri Lanka
+            <div *ngFor="let profile of datauser">
+                <label position="floating">
+                    <h2>Name : {{profile.firstName}} {{profile.lastName}}</h2>
+                </label>
+
+
+                <label position="floating">
+                    <h2>Email Address : {{profile.email}} </h2>
+                </label>
+
+                <label position="floating">
+                    <h2>Address : {{profile.address}}
+                    </h2>
+                </label>
+
+
+                <label position="floating">
+                    <h2>Phone Number : {{profile.phoneNumber}} </h2>
+                </label>
+                
             </div>
-            <p class="card-text">$900.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
         </div>
-        </div>
-                <div  class="card" style="width: 18rem; margin: 20px;">
-          <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-        <div class="card-body">
-            <h5 class="card-title">Unheated natural blue sapphire</h5>
-            <div class="description">
-                Unheated nutural blue sapphire from Sri Lanka
-            </div>
-            <p class="card-text">$900.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
-        </div>
-        </div>
-                <div  class="card" style="width: 18rem; margin: 20px;">
-          <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-        <div class="card-body">
-            <h5 class="card-title">Unheated natural blue sapphire</h5>
-            <div class="description">
-                Unheated nutural blue sapphire from Sri Lanka
-            </div>
-            <p class="card-text">$900.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
-        </div>
-        </div>
-                <div  class="card" style="width: 18rem; margin: 20px;">
-          <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-        <div class="card-body">
-            <h5 class="card-title">Unheated natural blue sapphire</h5>
-            <div class="description">
-                Unheated nutural blue sapphire from Sri Lanka
-            </div>
-            <p class="card-text">$900.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
-        </div>
+
+        <div class="logout-button">
+            <button (click)="logOut()" size="small">
+                <p class="signin-text-acount">Log Out</p>
+            </button>
         </div>
 
 
-        <div  class="card" style="width: 18rem; margin: 20px;">
-            <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-          <div class="card-body">
-              <h5 class="card-title">Unheated natural blue sapphire</h5>
-              <div class="description">
-                  Unheated nutural blue sapphire from Sri Lanka
-              </div>
-              <p class="card-text">$900.00</p>
-              <a href="#" class="btn btn-primary">BUY NOW</a>
-          </div>
-          </div>        <div  class="card" style="width: 18rem; margin: 20px;">
-            <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-          <div class="card-body">
-              <h5 class="card-title">Unheated natural blue sapphire</h5>
-              <div class="description">
-                  Unheated nutural blue sapphire from Sri Lanka
-              </div>
-              <p class="card-text">$900.00</p>
-              <a href="#" class="btn btn-primary">BUY NOW</a>
-          </div>
-          </div>
-  
-          <div  class="card" style="width: 18rem; margin: 20px;">
-            <img src="assets/images/001.jpg" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
-          <div class="card-body">
-              <h5 class="card-title">Unheated natural blue sapphire</h5>
-              <div class="description">
-                  Unheated nutural blue sapphire from Sri Lanka
-              </div>
-              <p class="card-text">$900.00</p>
-              <a href="#" class="btn btn-primary">BUY NOW</a>
-          </div>
-          </div>
-  
-
-        </div>
-
-<!-- 
-   <tr class="first">
-       <th class="one">
-
-       </th>
-
-       <th class="two">
-        <div class="card" style="width: 18rem; margin: 20px;">
-            <img src="assets/images/002.jpg" alt="..." class="rounded"  style="width: 18rem; height: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Nature Ceyloa blue sapphire</h5>
-            <div class="description">
-                3.47-carat, trilliant cut, natural Ceylon blue sapphire
-            </div>
-            <p class="card-text">$7,200.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
-        </div>
-        </div>
-       </th>
-
-       <th class="three"> 
-        <div class="card" style="width: 18rem; margin: 20px;">
-            <img src="assets/images/003.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Natural Ceylon cornflower blue sapphire</h5>
-            <div class="description">
-              Unheated natural Ceylon cornflower blue sapphire. This stone has not been treated in any way  
-            </div>
-            <p class="card-text">$1,200.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
-        </div>
-        </div>
-       </th>
-
-       <th> 
-        <div class="card" style="width: 18rem; margin: 20px;">
-                <img src="assets/images/004.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Natural cornflower blue sapphire</h5>
-            <div class="description">
-                2.73-carat, pear-shaped, natural cornflower blue sapphire
-            </div>
-            <p class="card-text">$3,200.00</p>
-            <a href="#" class="btn btn-primary">BUY NOW</a>
-        </div>
-        </div>
-       </th>
-
-   </tr> 
     </div>
-
-
-    
-   <div class="lahiru">
-     
-    <tr class="first">
-        <th class="one">
-         <div  class="card" style="width: 18rem; margin: 20px;">
-           <img src="assets/images/005.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem; ">
-         <div class="card-body">
-             <h5 class="card-title">2.81ct,heart shape,natural blue sapphire</h5>
-             <div class="description">
-                The shape is perfect for Engagement Rings as it is a literal symbol of love.
-            </div><br>
-             <p class="card-text">$3,200.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th class="two">
-         <div class="card" style="width: 18rem; margin: 20px;">
-             <img src="assets/images/006.jpg" alt="..." class="rounded"  style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">2.50ct,pear shape,natural blue sapphire</h5>
-             <div class="description">
-                Blue Sapphire stones make everlasting gifts and jewellery that have positive properties which also look exquisite and charming when worn.
-            </div><br>
-             <p class="card-text">$2,400.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th class="three"> 
-         <div class="card" style="width: 18rem; margin: 20px;">
-             <img src="assets/images/007.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">0.94ct, cushion shape,natural pink sapphire</h5>
-         <div class="description">
-             0.94ct cushion shape,natural pink sapphire
-            </div>
-             <p class="card-text">$295.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th> 
-         <div class="card" style="width: 18rem; margin: 20px;">
-                 <img src="assets/images/008.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">0.82ct, Oval,Natural pink sapphire</h5>
-             <div class="description">
-                 0.82ct, oval,top quality,natural pink sapphire
-             </div><br>
-             <p class="card-text">$320.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-    </tr> 
-     </div>
-
- 
-     <div class="lahiru">
-     
-        <tr class="first">
-            <th class="one">
-             <div  class="card" style="width: 18rem; margin: 20px;">
-               <img src="assets/images/009.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem; ">
-             <div class="card-body">
-                 <h5 class="card-title">0.94ct,Natural Pink sapphire</h5>
-                 <div class="description">
-                     0.94ct natural Pink Sapphire from Ceylon
-                    </div>
-                 <p class="card-text">$320.00</p>
-                 <a href="#" class="btn btn-primary">BUY NOW</a>
-             </div>
-             </div>
-            </th>
-     
-            <th class="two">
-             <div class="card" style="width: 18rem; margin: 20px;">
-                 <img src="assets/images/010.jpg" alt="..." class="rounded"  style="width: 18rem; height: 18rem;">
-             <div class="card-body">
-                 <h5 class="card-title">Natural Pink sapphire</h5>
-                 <div class="description">
-                     Natural Pink Sapphire
-                 </div><br>
-                 <p class="card-text">$190.00</p>
-                 <a href="#" class="btn btn-primary">BUY NOW</a>
-             </div>
-             </div>
-            </th>
-     
-            <th class="three"> 
-             <div class="card" style="width: 18rem; margin: 20px;">
-                 <img src="assets/images/011.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-             <div class="card-body">
-                 <h5 class="card-title">Natural pink sapphire</h5>
-                 <div class="description">
-                     Beautiful natural pink sapphire from Sri Lanka
-                 </div><br>
-                 <p class="card-text">$140.00</p>
-                 <a href="#" class="btn btn-primary">BUY NOW</a>
-             </div>
-             </div>
-            </th>
-     
-            <th> 
-             <div class="card" style="width: 18rem; margin: 20px;">
-                     <img src="assets/images/012.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-             <div class="card-body">
-                 <h5 class="card-title">Natural reddish-pink sapphire</h5>
-                 <div class="description">
-                     Natural reddish-pink sapphire
-                 </div>
-                 <p class="card-text">$340.00</p>
-                 <a href="#" class="btn btn-primary">BUY NOW</a>
-             </div>
-             </div>
-            </th>
-     
-        </tr> 
-         </div>
-
-
-          
-   <div class="lahiru">
-     
-    <tr class="first">
-        <th class="one">
-         <div  class="card" style="width: 18rem; margin: 20px;">
-           <img src="assets/images/013.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem; ">
-         <div class="card-body">
-             <h5 class="card-title">Natural Golden Yellow sapphire</h5>
-             <div class="description">
-                 Natural golden yellow sapphire
-                </div>
-             <p class="card-text">$360.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th class="two">
-         <div class="card" style="width: 18rem; margin: 20px;">
-             <img src="assets/images/014.jpg" alt="..." class="rounded"  style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">Natural unheated yellow sapphire</h5>
-             <div class="description">
-                 Natural unheated yellow sapphire
-                </div>
-             <p class="card-text">$3,900.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
-
-        <th class="three"> 
-         <div class="card" style="width: 18rem; margin: 20px;">
-             <img src="assets/images/015.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">Natural Yellow Sapphire</h5>
-             <div class="description">
-                 1.40ct, natural pale yellow sapphire from Ceylon
-             </div><br>
-             <p class="card-text">$120.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th> 
-         <div class="card" style="width: 18rem; margin: 20px;">
-                 <img src="assets/images/016.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">Natural Yellow Sapphire</h5>
-             <div class="description">
-                 0.41ct, natural yellow sapphire from Ceylon
-             </div><br>
-             <p class="card-text">$120.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-    </tr> 
-     </div>
-
- 
-   <div class="lahiru">
-     
-    <tr class="first">
-        <th class="one">
-         <div  class="card" style="width: 18rem; margin: 20px;">
-           <img src="assets/images/017.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem; ">
-         <div class="card-body">
-             <h5 class="card-title">1.32ct natural yellow sapphire</h5>
-             <div class="description">
-                 1.32ct, pear shape, unheated, natural yellow sapphire
-             </div>
-             <p class="card-text">$320.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th class="two">
-         <div class="card" style="width: 18rem; margin: 20px;">
-             <img src="assets/images/006.jpg" alt="..." class="rounded"  style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">2.50ct,pear shape,natural blue sapphire</h5>
-             
-             <p class="card-text">$2,400.00</p><br>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th class="three"> 
-         <div class="card" style="width: 18rem; margin: 20px;">
-             <img src="assets/images/007.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">0.94ct, cushion shape,natural pink sapphire</h5>
-             <p class="card-text">$295.00</p>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-        <th> 
-         <div class="card" style="width: 18rem; margin: 20px;">
-                 <img src="assets/images/008.jpg" alt="..." class="rounded" style="width: 18rem; height: 18rem;">
-         <div class="card-body">
-             <h5 class="card-title">0.82ct, Oval,Natural pink sapphire</h5>
-             <p class="card-text">$320.00</p><br>
-             <a href="#" class="btn btn-primary">BUY NOW</a>
-         </div>
-         </div>
-        </th>
- 
-    </tr>  -->
-     </div>
-
-</div>
-
-
-
-     
+</content>
