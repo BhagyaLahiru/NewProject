@@ -12,6 +12,7 @@ import { AddComponent } from './user/add/add.component';
 import { EditComponent } from './user/edit/edit.component';
 import { ViewComponent } from './user/view/view.component';
 import { LoginComponent } from './login/login.component';
+import { GemComponent } from './gem/gem.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     AddComponent,
     EditComponent,
     ViewComponent,
-    LoginComponent
+    LoginComponent,
+    GemComponent
   ],
   imports: [
     BrowserModule,

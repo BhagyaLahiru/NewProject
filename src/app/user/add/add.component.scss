@@ -4,12 +4,16 @@
 }
 
 
-figure
+.figure
 {
 border-style: dashed solid;
-background-color: aqua;
+background-color: rgb(178, 187, 187);
 width: 500px;
-height: 700px;
+height: 400px;
 margin-left: 500px;
-margin-top: 30px;
+margin-top: 50px;
+}
+
+.text-center{
+      margin-top: 40px;
 }
