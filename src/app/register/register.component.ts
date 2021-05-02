@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { RegisterService } from './register.service';
 
 @Component({
@@ -10,85 +9,40 @@ import { RegisterService } from './register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  form: FormGroup;
-  constructor(
-   
-   private registerService : RegisterService,
-    private router: Router, private toastCtrl: ToastController ) { }
+  constructor(public service: RegisterService, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.form = new FormGroup(
-      {
-        first: new FormControl(null, {
-          updateOn: 'blur',
-          validators: [Validators.required]
-        }),
-        last: new FormControl(null, {
-          updateOn: 'blur',
-          validators: [Validators.required]
-        }),
-        email: new FormControl(null, {
-          updateOn: 'blur',
-          validators: [Validators.required]
-        }),
-        address: new FormControl(null, {
-          updateOn: 'blur',
-          validators: [Validators.required]
-        }),
-        phoneNumber: new FormControl(null, {
-          updateOn: 'blur',
-          validators: [Validators.required]
-        }),
-        password: new FormControl(null, {
-          updateOn: 'blur',
-          validators: [Validators.required, Validators.minLength(1)]
-        })
-      });
+    this.service.formModel.reset();
   }
 
-  // onCreateGem() {
-  //   if (!this.form.valid) {
-  //     return;
-  //   }
-  //   console.log(this.form);
-  // }
+  onSubmit() {
+    console.log('frm val: ' + this.service.formModel.value.email);
+    this.service.register().subscribe(
+      (res: any) => {
+        if (res.succeeded) {
+          this.service.formModel.reset();
+          this.toastr.success('New user created!', 'Registration successful.');
+          console.log('New user created! Registration successful.')
+        } else {
+          res.errors.forEach(element => {
+            switch (element.code) {
+              case 'DuplicateUserName':
+                this.toastr.error('Username is already taken','Registration failed.');
+                console.log('Username is already taken','Registration failed.');
+                break;
 
-  async onsingup() {
-    try {
-      const res: any = await this.registerService.singup(JSON.stringify({
-        firstName: this.form.value.first,
-        lastName: this.form.value.last,
-        email: this.form.value.email,
-        address :this.form.value.address,
-        phoneNumber :this.form.value.phoneNumber,
-        password: this.form.value.password
-      }));
-
-      if (res.message === 'Success') {
-        const toast = await this.toastCtrl.create({
-          message: 'User created successfully',
-          duration: 3000,
-          position: 'bottom'
-        });
-
-        toast.present();
-        this.registerService._userIsAuthenticated  = true;
-        this.form.reset();
-        this.router.navigateByUrl('/login');
+              default:
+              this.toastr.error(element.description,'Registration failed.');
+              console.log(element.description + ' Registration failed.')
+                break;
+            }
+          });
+        }
+      },
+      err => {
+        console.log(err);
       }
-
-    } catch (err) {
-      console.log(err.error);
-      const toast = await this.toastCtrl.create({
-        message: 'User creation failed',
-        duration: 3000,
-        position: 'bottom'
-      });
-
-      toast.present();
-    }
-
+    );
   }
+
 }
-
-
