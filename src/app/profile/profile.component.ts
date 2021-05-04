@@ -5,40 +5,36 @@ import { ProfileService } from './profile.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  userDetails: any;
+
+  constructor(private router: Router, private service: ProfileService) { }
 
  
+  ngOnInit() {
+  }
 
-  
-  constructor( public profileServce:ProfileService ,   private router: Router,  ) {}
-
-     ngOnInit() {
- 
-     }
-     datauser;
-
-     
-     ionViewWillEnter() {
-      this.getDataUser();
+   ionViewWillEnter() {
+      this.getUserProfile();
       console.log("this is work")
-     }
-      getDataUser() {
+   }
 
-        let id = +localStorage.getItem('userID')
-        
-         this.profileServce.getDataUser(id).subscribe((res:any) => {
-        console.log(res.data);
-        this.datauser = res.data;
-  
-      });
-  }
+   getUserProfile() {
 
-  logOut(){
+    let id = +localStorage.getItem('userID')
+    
+     this.service.getUserProfile(id).subscribe((res:any) => {
+    console.log(res.data);
+    this.userDetails = res.data;
 
-    this.router.navigateByUrl('/acount');
-    localStorage.removeItem('userID');
-  }
-
+  });
 }
+
+  onLogout() {
+    localStorage.removeItem('userID');
+    this.router.navigate(['/user/login']);
+  }
+}
+

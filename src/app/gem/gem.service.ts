@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GemService {
-
   readonly apiUrl = 'http://localhost:49789/api/Gem/Select/';
   constructor(private http: HttpClient) { }
   

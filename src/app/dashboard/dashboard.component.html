@@ -1,36 +1,43 @@
-<div class="background">
 
 
+<div class="wrapper">
+  <div class="wrapped-div">
+    <div class="tab-header">
 
-  <h1 class="title" style="color: black;font-weight: bold;font-family: monospace;font-size: 40px;">Dashboard</h1>
-  <div style="height: 25%;">
-    <div style="height: 100%;" size="6">
-      <div style="height: 100%; width: 90%; background-color: red;" routerLink="../gems/fixed-gems-list">
-
-        <div>
-          <div style="position: absolute; left: 10%; top: 10%; font-size: 30px; color: white;">
-            Fix Gems
-          </div>
-          <div style="position: absolute;  color: white; font-size: xx-large; bottom: 0; right: 5%; ">
-            {{ this.gemlistFix.length}}
-          </div>
-        </div>
-      </div>
     </div>
-    <div size="6">
-      <div class="add_color" style="height: 100%; width: 90%; background-color: rgb(49, 149, 231);"
-        routerLink="../gems/bid-gems-list">
-        <div>
-          <div style="position: absolute; left: 10%; top: 10%; font-size: 30px; color: white;">
-            Bid Gems
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <router-outlet>  <h1 class="title" style="color: black;font-weight: bold;font-family: monospace;font-size: 40px;">Dashboard</h1>
+          <div style="height: 25%;">
+            <div style="height: 100%;" size="6">
+              <div style="height: 100%; width: 90%; background-color: red;" routerLink="../gems/fixed-gems-list">
+        
+                <div>
+                  <div style="position: absolute; left: 10%; top: 10%; font-size: 30px; color: white;">
+                    Fix Gems
+                  </div>
+                  <div style="position: absolute;  color: white; font-size: xx-large; bottom: 0; right: 5%; ">
+                    {{ this.gemlistFix.length}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div size="6">
+              <div class="add_color" style="height: 100%; width: 90%; background-color: rgb(49, 149, 231);"
+                routerLink="../gems/bid-gems-list">
+                <div>
+                  <div style="position: absolute; left: 10%; top: 10%; font-size: 30px; color: white;">
+                    Bid Gems
+                  </div>
+                  <div style="position: absolute;  color: white; font-size: xx-large; bottom: 0; right: 5%; ">
+                    {{ this.gemlistBid.length}}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="position: absolute;  color: white; font-size: xx-large; bottom: 0; right: 5%; ">
-            {{ this.gemlistBid.length}}
-          </div>
-        </div>
+        </router-outlet>
       </div>
     </div>
   </div>
-
-
 </div>

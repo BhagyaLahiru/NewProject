@@ -5,10 +5,11 @@ import { GemService } from './gem.service';
 @Component({
   selector: 'app-gem',
   templateUrl: './gem.component.html',
-  styleUrls: ['./gem.component.scss']
+  styleUrls: ['./gem.component.css']
 })
 export class GemComponent implements OnInit {
 
+  
   constructor(public gemService: GemService,   private router: Router) { }
 
   ngOnInit(): void {

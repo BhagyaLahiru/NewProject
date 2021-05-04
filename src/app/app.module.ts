@@ -1,47 +1,49 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
-import { AddComponent } from './user/add/add.component';
-import { EditComponent } from './user/edit/edit.component';
-import { ViewComponent } from './user/view/view.component';
-import { LoginComponent } from './login/login.component';
-import { GemComponent } from './gem/gem.component';
-import { RegisterComponent } from './register/register.component';
+import { RegistrationComponent } from './user/registration/registration.component';
+import { UserService } from './shared/user.service';
+import { LoginComponent } from './user/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { GemComponent } from './gem/gem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    UserComponent,
+    RegistrationComponent,
+    LoginComponent,
     HomeComponent,
     ProfileComponent,
-    UserComponent,
-    AddComponent,
-    EditComponent,
-    ViewComponent,
-    LoginComponent,
-    GemComponent,
-    RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    GemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
-
+    ToastrModule.forRoot({
+      progressBar: true
+    }),
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

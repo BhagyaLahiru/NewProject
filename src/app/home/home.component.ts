@@ -5,9 +5,10 @@ import { HomeService } from './home.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   datagems;
   constructor(
     private homeService: HomeService ,  private router: Router
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
   gemDtls(id){
 
     localStorage.setItem('gemID' , id);
-this.router.navigateByUrl('/gem-proc');
+this.router.navigateByUrl('/gem');
 
   }
 

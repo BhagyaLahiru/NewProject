@@ -5,11 +5,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProfileService {
-
   readonly apiUrl = 'http://localhost:49789/api/User/Select/';
   constructor(private http: HttpClient) { }
   
-  getDataUser(id:number) {
+  getUserProfile(id:number) {
     return this.http.get(this.apiUrl+id);
   }
 }

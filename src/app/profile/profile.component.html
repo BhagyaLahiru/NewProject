@@ -1,44 +1,29 @@
-<content>
-
-
-
-   
-
-    <div class="profile-info" style="background-image: url('/assets/image/profile-background-image.jpg');">
-        <div class="profile-backgroud">
-            <h1 class="title" style="color: black;font-weight: bold;font-family: monospace;">User Profile</h1>
-            <div class="profile-pic">
-                <img src="\assets\image\profile.png">
-            </div>
-            <div *ngFor="let profile of datauser">
-                <label position="floating">
-                    <h2>Name : {{profile.firstName}} {{profile.lastName}}</h2>
-                </label>
-
-
-                <label position="floating">
-                    <h2>Email Address : {{profile.email}} </h2>
-                </label>
-
-                <label position="floating">
-                    <h2>Address : {{profile.address}}
-                    </h2>
-                </label>
-
-
-                <label position="floating">
-                    <h2>Phone Number : {{profile.phoneNumber}} </h2>
-                </label>
-                
-            </div>
-        </div>
-
-        <div class="logout-button">
-            <button (click)="logOut()" size="small">
-                <p class="signin-text-acount">Log Out</p>
-            </button>
-        </div>
-
+<div class="wrapper">
+  <div class="wrapped-div">
+    <div class="tab-header">
+      <h2>User Profile</h2>
 
     </div>
-</content>
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <router-outlet>
+          <img src="/assets/img/single_user.png" class="mx-auto d-block">
+
+          <div class="card m-5" style="width:18rem" *ngFor="let profile of userDetails">
+            <ul class="list-group">
+              <li class="list-group-item"><strong>First Name : </strong>{{profile.firstName}}</li>
+              <li class="list-group-item"><strong>Last Name : </strong>{{profile.lastName}}</li>
+              <li class="list-group-item"><strong>Email Address : </strong>{{profile.email}}</li>
+              <li class="list-group-item"><strong>Address : </strong>{{profile.address}}</li>
+              <li class="list-group-item"><strong>Phone Number : </strong>{{profile.phoneNumber}}</li>
+            </ul>
+          </div>
+          <div class="form-group col-md-8 offset-md-2">
+            <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+          </div>
+
+      </router-outlet>
+    </div>
+  </div>
+</div>
+</div>
