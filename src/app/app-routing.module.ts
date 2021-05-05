@@ -8,7 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GemComponent } from './gem/gem.component';
-
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PaymentDetailFormComponent } from './payment-details/payment-detail-form/payment-detail-form.component';
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent},
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'user/login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'gem', component: GemComponent },
+  { path: 'payment-details', component: PaymentDetailsComponent },
+  { path: 'payment-details/payment-detail-form', component: PaymentDetailFormComponent },
   
   
 ];

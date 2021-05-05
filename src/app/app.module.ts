@@ -16,6 +16,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GemComponent } from './gem/gem.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PaymentDetailFormComponent } from './payment-details/payment-detail-form/payment-detail-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { GemComponent } from './gem/gem.component';
     HomeComponent,
     ProfileComponent,
     DashboardComponent,
-    GemComponent
+    GemComponent,
+    PaymentDetailsComponent,
+    PaymentDetailFormComponent
   ],
   imports: [
     BrowserModule,
