@@ -7,8 +7,18 @@
     <div class="row">
       <div class="col-md-10 offset-md-1">
         <router-outlet>
-          <img src="/assets/img/single_user.png" class="mx-auto d-block">
-
+          <!-- <img src="/assets/img/single_user.png" class="mx-auto d-block"> -->
+          <form #imageForm=ngForm (ngSubmit)="OnSubmit(Caption,Image)">
+            <div class="row">
+              <div class="input-field col s12">
+                <!-- <input type="text" #Caption ngModel name="Caption" id="Caption" required> -->
+              <!-- <label for="Caption">Caption</label> -->
+              </div>
+            </div>
+            <img [src]="imageUrl"  style="width:250px;height:200px" class="mx-auto d-block">
+            <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+            <button type="submit" class="btn-large btn-submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
+          </form>
           <div class="card m-5" style="width:18rem" *ngFor="let profile of userDetails">
             <ul class="list-group">
               <li class="list-group-item"><strong>First Name : </strong>{{profile.firstName}}</li>
