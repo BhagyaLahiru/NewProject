@@ -11,14 +11,4 @@ export class ProfileService {
   getUserProfile(id:number) {
     return this.http.get(this.apiUrl+id);
   }
-
-  postFile(caption: string, fileToUpload: File) {
-    const endpoint = 'http://localhost:49789/api/User/insert';
-    const formData: FormData = new FormData();
-    formData.append('Image', fileToUpload, fileToUpload.name);
-    formData.append('ImageCaption', caption);
-    return this.http
-      .post(endpoint, formData);
-  }
-
 }

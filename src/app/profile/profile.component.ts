@@ -9,17 +9,16 @@ import { ProfileService } from './profile.service';
 })
 export class ProfileComponent implements OnInit {
   userDetails: any;
-  imageUrl: string = "/assets/img/default-image.png";
-  fileToUpload: File = null;
 
   constructor(private router: Router, private service: ProfileService) { }
 
  
   ngOnInit() {
+    this.getUserProfile();
   }
 
    ionViewWillEnter() {
-      this.getUserProfile();
+    
       console.log("this is work")
    }
 
@@ -27,7 +26,7 @@ export class ProfileComponent implements OnInit {
 
     let id = +localStorage.getItem('userID')
     
-     this.service.getUserProfile(id).subscribe((res:any) => {
+    this.service.getUserProfile(id).subscribe((res:any) => {
     console.log(res.data);
     this.userDetails = res.data;
 
@@ -37,28 +36,6 @@ export class ProfileComponent implements OnInit {
   onLogout() {
     localStorage.removeItem('userID');
     this.router.navigate(['/user/login']);
-  }
-
-  handleFileInput(file: FileList) {
-    this.fileToUpload = file.item(0);
-
-    //Show image preview
-    var reader = new FileReader();
-    reader.onload = (event:any) => {
-      this.imageUrl = event.target.result;
-    }
-    reader.readAsDataURL(this.fileToUpload);
-  }
-
-  OnSubmit(Caption,Image){
-   this.service.postFile(Caption.value,this.fileToUpload).subscribe(
-     data =>{
-       console.log('done');
-       Caption.value = null;
-       Image.value = null;
-       this.imageUrl = "/assets/img/default-image.png";
-     }
-   );
   }
 }
 

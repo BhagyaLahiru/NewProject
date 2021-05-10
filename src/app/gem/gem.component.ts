@@ -13,13 +13,14 @@ export class GemComponent implements OnInit {
   constructor(public gemService: GemService,   private router: Router) { }
 
   ngOnInit(): void {
+    this.getDatagem();
   }
 
   
   gem:any={};
 
   ionViewWillEnter() {
-   this.getDatagem();
+ 
    
   }
   getDatagem() {
