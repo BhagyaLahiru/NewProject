@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular7';
+  constructor(
+    // private platform: Platform,
+    // private splashScreen: SplashScreen,
+    // private statusBar: StatusBar,
+    private router: Router, 
+  ) {
+
+  }
+
+  IsLogin: any;
+
+  ngOnInit(): void {
+
+  }
+
+
+
+  goAccount(){
+
+    let userId = +localStorage.getItem('userID')
+    if( userId > 0 ) {
+      this.router.navigateByUrl('/profile')
+    } else {
+      this.router.navigateByUrl('/user')
+    }
+  }
+
 }

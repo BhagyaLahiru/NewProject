@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
 
   onLogout() {
     localStorage.removeItem('userID');
-    this.router.navigate(['/user/login']);
+    this.router.navigate(['/user']);
   }
 }
 

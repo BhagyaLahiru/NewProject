@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'gem', component: GemComponent },
   { path: 'payment-details', component: PaymentDetailsComponent },
   { path: 'payment-details/payment-detail-form', component: PaymentDetailFormComponent },
+  { path: 'user', component: UserComponent },
   
   
 ];

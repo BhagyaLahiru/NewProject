@@ -19,10 +19,10 @@ export class GemComponent implements OnInit {
   
   gem:any={};
 
-  ionViewWillEnter() {
+  // ionViewWillEnter() {
  
    
-  }
+  // }
   getDatagem() {
     let id = +localStorage.getItem('gemID')
      
