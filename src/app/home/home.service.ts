@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HomeService {
-  readonly apiUrl = 'http://localhost:49789/api/Gem/Selet';
+  readonly apiUrl = 'http://localhost:49789/api/Gem/Select/-999';
   constructor(private http: HttpClient) { }
 
 

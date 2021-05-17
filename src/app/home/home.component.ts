@@ -10,6 +10,7 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
 
   datagems;
+  gemListApprove =[];
   constructor(
     private homeService: HomeService ,  private router: Router
   ) { }
@@ -23,13 +24,22 @@ export class HomeComponent implements OnInit {
       console.log(res.data);
       this.datagems = res.data;
 
+      let indx=0;
+       this.datagems.forEach((gem)=>{
+         if(gem.approve){
+           this.gemListApprove[indx] =gem;
+           indx++;
+         }
+       });
+
+
     });
   }
 
 
   gemDtls(id){
 
-    localStorage.setItem('gemID' , id);
+    localStorage.setItem('gemID' , JSON.stringify(id));
 this.router.navigateByUrl('/gem');
 
   }

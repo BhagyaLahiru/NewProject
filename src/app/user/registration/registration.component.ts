@@ -2,6 +2,7 @@ import { UserService } from './../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(public service: UserService, private toastr: ToastrService,private fb: FormBuilder) { }
+  constructor(public service: UserService, private toastr: ToastrService,private router: Router,private fb: FormBuilder) { }
   formModel
   ngOnInit() {
   
@@ -23,6 +24,7 @@ export class RegistrationComponent implements OnInit {
       email: ['', Validators.email],
       address: ['', Validators.required],
       phoneNumber: ['', Validators.required],
+      nicNumber: ['', Validators.required],
       password: this.fb.group({
         password: ['', [Validators.required, Validators.minLength(4)]],
         ConfirmPassword: ['', Validators.required]
@@ -54,6 +56,7 @@ export class RegistrationComponent implements OnInit {
       email: this.formModel.value.email,
       address: this.formModel.value.address,
       phoneNumber: this.formModel.value.phoneNumber,
+      nicNumber: this.formModel.value.nic,
       password: this.formModel.value.password.password
     };
 
@@ -65,7 +68,7 @@ console.log(
       (res: any) => {
         // if (res.succeeded) {
           this.formModel.reset();
-          
+          this.router.navigateByUrl('/user/login');
           this.toastr.success('New user created!', 'Registration successful.');
 
           console.log('New user created! Registration successful.');

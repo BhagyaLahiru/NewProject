@@ -18,7 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GemComponent } from './gem/gem.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { PaymentDetailFormComponent } from './payment-details/payment-detail-form/payment-detail-form.component';
-import { CartComponent } from './cart/cart.component';
+// import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
     GemComponent,
     PaymentDetailsComponent,
     PaymentDetailFormComponent,
-    CartComponent,
+    // CartComponent,
     CartItemComponent
   ],
   imports: [

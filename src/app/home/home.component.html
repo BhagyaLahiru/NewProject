@@ -30,11 +30,11 @@
   <div class="lahiru">
 
     <div class="ae">
-      <div size="6" *ngFor="let product of datagems">
+      <div size="6" *ngFor="let product of gemListApprove">
 
 
         <div class="card" style="width: 18rem; margin: 20px;">
-          <div class="card-image" (click)="gemDtls(product.gemID)"  >
+          <div class="card-image" (click)="gemDtls(product)"  >
 
             <img [src]="product.gemImage" alt="..." class="img-fluid" style="width: 18rem; height: 18rem; ">
             <div class="card-body">
